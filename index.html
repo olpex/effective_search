@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інструменти для ефективного пошуку інформації</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Перемикач теми">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            <h1>Інструменти для ефективного пошуку інформації в мережі</h1>
+            <p class="subtitle">Повний перелік сервісів, інструментів і програм для ефективного пошуку в Інтернеті</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Пошук по категоріях та сервісах..." class="search-input">
+                <button class="search-btn" onclick="performSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="filter-controls">
+                <select id="sortFilter" class="filter-select">
+                    <option value="default">Сортування за замовчуванням</option>
+                    <option value="alphabetical">За алфавітом</option>
+                    <option value="services-count">За кількістю сервісів</option>
+                </select>
+                <select id="typeFilter" class="filter-select">
+                    <option value="all">Всі категорії</option>
+                    <option value="search">Пошукові системи</option>
+                    <option value="specialized">Спеціалізовані</option>
+                    <option value="tools">Інструменти</option>
+                </select>
+            </div>
+            <div class="search-results" id="searchResults" style="display: none;"></div>
+        </div>
+        
+        <div class="categories-grid" id="categoriesGrid">
+            <div class="category-card" data-category="search">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+                <h3>1. Загальні пошукові системи</h3>
+                <p>Основні пошукові системи для загального використання</p>
+                <div class="category-stats">
+                    <span class="service-count">44 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="general-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="search">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h3>2. Метапошукові системи</h3>
+                <p>Системи, що об'єднують результати з кількох пошукових систем</p>
+                <div class="category-stats">
+                        <span class="service-count">34 сервіси</span>
+                        <span class="category-type">Безкоштовно</span>
+                    </div>
+                <a href="meta-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                </div>
+                <h3>3. Науковий пошук</h3>
+                <p>Спеціалізовані системи для пошуку наукових публікацій</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="scientific-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h3>4. OSINT та спеціалізовані бази даних</h3>
+                <p>Інструменти розвідки з відкритих джерел</p>
+                <div class="category-stats">
+                    <span class="service-count">43 сервіси</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="osint.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21,15 16,10 5,21"></polyline>
+                    </svg>
+                </div>
+                <h3>5. Пошук файлів, зображень, відео</h3>
+                <p>Спеціалізовані системи для мультимедійного контенту</p>
+                <div class="category-stats">
+                    <span class="service-count">35 сервісів</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="media-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3>6. Пошук у соцмережах і форумах</h3>
+                <p>Інструменти для пошуку в соціальних мережах</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="social-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                        <path d="M2 2l7.586 7.586"></path>
+                        <circle cx="11" cy="11" r="2"></circle>
+                    </svg>
+                </div>
+                <h3>7. Агрегатори новин та аналітики</h3>
+                <p>Платформи для збору та аналізу новин</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="news-aggregators.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="tools">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                </div>
+                <h3>8. Архіви та кеші</h3>
+                <p>Сервіси для доступу до архівних версій веб-сторінок</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="archives-caches.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <h3>9. Пошук по маркетплейсах</h3>
+                <p>Інструменти для пошуку товарів та послуг</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="marketplace-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                </div>
+                <h3>10. Пошук по PDF, книгах, документах</h3>
+                <p>Спеціалізовані системи для пошуку документів</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="document-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="specialized">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3>11. Пошук в даркнеті</h3>
+                <p>Інструменти для пошуку в прихованій частині Інтернету</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="darknet-search.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="tools">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,11 12,14 22,4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <h3>12. Перевірка фактів та верифікація</h3>
+                <p>Інструменти для перевірки достовірності інформації</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Безкоштовно</span>
+                </div>
+                <a href="fact-checking.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="tools">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 17h.01"></path>
+                    </svg>
+                </div>
+                <h3>13. AI асистенти та пошук</h3>
+                <p>Інтелектуальні системи пошуку на базі штучного інтелекту</p>
+                <div class="category-stats">
+                    <span class="service-count">49 сервісів</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="ai-assistants.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="tools">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3>14. Розширення та плагіни</h3>
+                <p>Додатки для браузерів для покращення пошуку</p>
+                <div class="category-stats">
+                    <span class="service-count">25 сервісів</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="browser-extensions.html" class="btn">Переглянути</a>
+            </div>
+
+            <div class="category-card" data-category="tools">
+                <div class="category-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <h3>15. Пошук за кодом і програмування</h3>
+                <p>Спеціалізовані платформи для розробників</p>
+                <div class="category-stats">
+                    <span class="service-count">34 сервіси</span>
+                    <span class="category-type">Змішано</span>
+                </div>
+                <a href="code-search.html" class="btn">Переглянути</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Інструменти для ефективного пошуку інформації</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Дані про всі сервіси для пошуку
+        const allServices = {
+            'general-search.html': {
+                 title: 'Загальні пошукові системи',
+                 services: ['Google', 'Bing', 'Yahoo', 'DuckDuckGo', 'Yandex', 'Baidu', 'Searx', 'Startpage', 'Swisscows', 'Ecosia', 'Qwant', 'Brave Search', 'Neeva', 'You.com', 'Kagi', 'Mojeek', 'MetaGer', 'Gibiru', 'Disconnect Search', 'Searx.space', 'Whoogle', 'Presearch', 'Yep', 'Naver', 'Seznam', 'Sogou', '360 Search', 'Rambler', 'Mail.ru Search', 'Goo', 'Excite', 'Lycos', 'Dogpile', 'Ixquick']
+             },
+            'meta-search.html': {
+                title: 'Метапошукові системи',
+                services: ['Dogpile', 'MetaCrawler', 'Excite', 'WebCrawler', 'Search.com', 'Ixquick', 'Clusty', 'Mamma', 'Zoo', 'Polymeta']
+            },
+            'scientific-search.html': {
+                title: 'Науковий пошук',
+                services: ['Google Scholar', 'PubMed', 'arXiv', 'ResearchGate', 'Academia.edu', 'JSTOR', 'Scopus', 'Web of Science', 'IEEE Xplore', 'SpringerLink']
+            },
+            'osint.html': {
+                 title: 'OSINT та спеціалізовані бази даних',
+                 services: ['Shodan', 'Censys', 'ZoomEye', 'Maltego', 'SpiderFoot', 'theHarvester', 'Recon-ng', 'OSINT Framework', 'IntelTechniques', 'Bellingcat', 'Pipl', 'TruePeopleSearch', 'WhitePages', 'Spokeo', 'Creepy', 'Sherlock', 'Social Searcher', 'Yandex Images', 'Exif.tools', 'Wigle', 'OSINT Combine', 'Hunchly', 'Paliscope', 'Skopenow', 'Lampyre', 'Datasploit', 'Photon', 'Twint', 'Metagoofil']
+             },
+            'media-search.html': {
+                title: 'Пошук файлів, зображень, відео',
+                services: ['Google Images', 'TinEye', 'Yandex Images', 'Bing Visual Search', 'YouTube', 'Vimeo', 'Flickr', 'Getty Images', 'Shutterstock', 'Unsplash']
+            },
+            'social-search.html': {
+                title: 'Пошук у соцмережах і форумах',
+                services: ['Facebook Search', 'Twitter Advanced Search', 'LinkedIn', 'Instagram', 'Reddit Search', 'Discord', 'Telegram', 'WhatsApp', 'TikTok', 'Snapchat']
+            },
+            'news-aggregators.html': {
+                title: 'Агрегатори новин та аналітики',
+                services: ['Google News', 'AllSides', 'Ground News', 'NewsNow', 'Feedly', 'Flipboard', 'Apple News', 'SmartNews', 'Pocket', 'Inoreader']
+            },
+            'archives-caches.html': {
+                title: 'Архіви та кеші',
+                services: ['Wayback Machine', 'Archive.today', 'Google Cache', 'Bing Cache', 'Library Genesis', 'Internet Archive', 'Memento', 'WebCite', 'Perma.cc', 'CachedView']
+            },
+            'marketplace-search.html': {
+                title: 'Пошук по маркетплейсах',
+                services: ['Amazon', 'eBay', 'Alibaba', 'AliExpress', 'Etsy', 'Shopify', 'WooCommerce', 'BigCommerce', 'Magento', 'PrestaShop']
+            },
+            'document-search.html': {
+                title: 'Пошук по PDF, книгах, документах',
+                services: ['Google Books', 'Open Library', 'Project Gutenberg', 'HathiTrust', 'Scribd', 'SlideShare', 'DocPlayer', 'ISSUU', 'Academia Papers', 'ResearchGate Papers']
+            },
+            'darknet-search.html': {
+                title: 'Пошук в даркнеті',
+                services: ['Ahmia', 'DuckDuckGo Onion', 'Torch', 'NotEvil', 'Candle', 'Haystack', 'Grams', 'OnionLand', 'Fresh Onions', 'Hidden Wiki']
+            },
+            'fact-checking.html': {
+                title: 'Перевірка фактів та верифікація',
+                services: ['Snopes', 'FactCheck.org', 'PolitiFact', 'Reuters Fact Check', 'AP Fact Check', 'BBC Reality Check', 'Full Fact', 'Factly', 'Lead Stories', 'Check Your Fact']
+            },
+            'ai-assistants.html': {
+                 title: 'AI асистенти та пошук',
+                 services: ['ChatGPT', 'Claude', 'Bard', 'Bing Chat', 'Perplexity', 'You.com', 'Phind', 'Kagi', 'Neeva', 'Brave Search', 'Copy.ai', 'Jasper', 'Writesonic', 'Rytr', 'Grammarly', 'Quillbot', 'Otter.ai', 'Mem', 'Obsidian', 'Roam Research', 'Anthropic Claude', 'Gemini', 'Microsoft Copilot', 'Character.AI', 'Poe by Quora', 'Hugging Face', 'Replika', 'Jasper AI', 'Writesonic']
+             },
+            'browser-extensions.html': {
+                title: 'Розширення та плагіни',
+                services: ['uBlock Origin', 'Ghostery', 'Privacy Badger', 'DuckDuckGo Privacy Essentials', 'Honey', 'LastPass', 'Grammarly', 'Pocket', 'Evernote Web Clipper', 'OneTab']
+            },
+            'code-search.html': {
+                title: 'Пошук за кодом і програмування',
+                services: ['GitHub', 'GitLab', 'Bitbucket', 'SourceForge', 'Stack Overflow', 'CodePen', 'JSFiddle', 'Repl.it', 'Glitch', 'Observable']
+            }
+        };
+        
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('searchResults');
+            const categoriesGrid = document.getElementById('categoriesGrid');
+            
+            if (query === '') {
+                resultsContainer.style.display = 'none';
+                categoriesGrid.style.display = 'grid';
+                return;
+            }
+            
+            const results = [];
+            
+            // Пошук по категоріях та сервісах
+            Object.entries(allServices).forEach(([file, data]) => {
+                const categoryMatch = data.title.toLowerCase().includes(query);
+                const serviceMatches = data.services.filter(service => 
+                    service.toLowerCase().includes(query)
+                );
+                
+                if (categoryMatch || serviceMatches.length > 0) {
+                    results.push({
+                        file: file,
+                        title: data.title,
+                        matchedServices: serviceMatches,
+                        categoryMatch: categoryMatch
+                    });
+                }
+            });
+            
+            if (results.length > 0) {
+                displaySearchResults(results);
+                categoriesGrid.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            } else {
+                resultsContainer.innerHTML = '<div class="no-results">Нічого не знайдено</div>';
+                categoriesGrid.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            }
+        }
+        
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            let html = '<h3>Результати пошуку:</h3><div class="search-results-grid">';
+            
+            results.forEach(result => {
+                html += `
+                    <div class="search-result-card">
+                        <h4>${result.title}</h4>
+                        ${result.categoryMatch ? '<span class="match-type">Категорія</span>' : ''}
+                        ${result.matchedServices.length > 0 ? 
+                            `<div class="matched-services">
+                                <strong>Знайдені сервіси:</strong> ${result.matchedServices.join(', ')}
+                            </div>` : ''}
+                        <a href="${result.file}" class="btn">Переглянути</a>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            html += '<button class="clear-search-btn" onclick="clearSearch()">Очистити пошук</button>';
+            resultsContainer.innerHTML = html;
+        }
+        
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('categoriesGrid').style.display = 'grid';
+        }
+        
+        // Пошук при натисканні Enter
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Пошук в реальному часі
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            if (query.length >= 2) {
+                performSearch();
+            } else if (query.length === 0) {
+                clearSearch();
+            }
+        });
+
+        // Функціональність темної теми
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Перевірка збереженої теми
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : '';
+            localStorage.setItem('theme', currentTheme);
+        });
+
+        // Функціональність фільтрації
+        const sortFilter = document.getElementById('sortFilter');
+        const typeFilter = document.getElementById('typeFilter');
+        const categoriesGrid = document.getElementById('categoriesGrid');
+        
+        function applyFilters() {
+            const sortValue = sortFilter.value;
+            const typeValue = typeFilter.value;
+            const cards = Array.from(categoriesGrid.children);
+            
+            // Фільтрація за типом
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (typeValue === 'all' || category === typeValue) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Сортування
+            const visibleCards = cards.filter(card => card.style.display !== 'none');
+            
+            if (sortValue === 'alphabetical') {
+                visibleCards.sort((a, b) => {
+                    const titleA = a.querySelector('h3').textContent;
+                    const titleB = b.querySelector('h3').textContent;
+                    return titleA.localeCompare(titleB);
+                });
+            } else if (sortValue === 'services-count') {
+                visibleCards.sort((a, b) => {
+                    const countA = parseInt(a.querySelector('.service-count').textContent);
+                    const countB = parseInt(b.querySelector('.service-count').textContent);
+                    return countB - countA;
+                });
+            }
+            
+            // Перевпорядкування карток
+            visibleCards.forEach(card => {
+                categoriesGrid.appendChild(card);
+            });
+        }
+        
+        sortFilter.addEventListener('change', applyFilters);
+        typeFilter.addEventListener('change', applyFilters);
+
+        // Анімації появи карток
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${Array.from(entry.target.parentNode.children).indexOf(entry.target) * 0.1}s`;
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.category-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
