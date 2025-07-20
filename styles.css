@@ -889,3 +889,61 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* Key Features Styles */
+.key-features {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.key-features strong {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.key-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.key-features li {
+    padding: 0.3rem 0;
+    color: #495057;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.key-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Dark theme support for key features */
+[data-theme="dark"] .key-features {
+    background: linear-gradient(135deg, #1a1d29 0%, #252a3a 100%);
+    border-left-color: #4dabf7;
+}
+
+[data-theme="dark"] .key-features strong {
+    color: #4dabf7;
+}
+
+[data-theme="dark"] .key-features li {
+    color: #adb5bd;
+}
+
+[data-theme="dark"] .key-features li::before {
+    color: #51cf66;
+}
