@@ -1,0 +1,60 @@
+{
+  "name": "search-tools-directory",
+  "version": "1.0.0",
+  "description": "Каталог з понад 800 інструментів для пошуку інформації в 25+ категоріях",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "dev": "npx live-server --port=3000 --no-browser",
+    "build": "echo 'Static site - no build required'",
+    "test": "npx html-validate *.html && npx stylelint styles.css",
+    "lint:html": "npx html-validate *.html",
+    "lint:css": "npx stylelint styles.css",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
+    "validate": "npx html-validate *.html && npx w3c-html-validator *.html",
+    "optimize": "npx imagemin-cli --out-dir=optimized",
+    "deploy": "echo 'Deploy to your preferred hosting service'"
+  },
+  "keywords": [
+    "search",
+    "tools",
+    "directory",
+    "osint",
+    "information",
+    "research",
+    "ukraine",
+    "catalog",
+    "pwa",
+    "responsive"
+  ],
+  "author": "Search Tools Directory",
+  "license": "MIT",
+  "homepage": "https://search-tools.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/search-tools-directory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/search-tools-directory/issues"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "html-validate": "^8.7.4",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "lighthouse": "^11.4.0",
+    "w3c-html-validator": "^1.6.2",
+    "imagemin-cli": "^7.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
